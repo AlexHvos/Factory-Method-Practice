@@ -6,13 +6,18 @@ using System.Threading.Tasks;
 
 while (true)
 {
-    Console.WriteLine("Please enter the diet that wish to do:");
+    Console.WriteLine(@"Please enter the diet that wish to do:
+                        ve - vegan
+                        vt - vegeterian
+                        om - omnivore
+                     ");
     DietFactory sample = new DietFactory();
     IBasicDiet diet = sample.GetDiet(Console.ReadLine());
     if (diet != null)
         diet.PrintMenu();
     else
         Console.WriteLine("Unknown diet");
+    Console.WriteLine();
 }
 
 public class DietFactory
